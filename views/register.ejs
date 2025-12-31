@@ -1,0 +1,13 @@
+<h2>Inscription</h2>
+<form action="/register" method="POST">
+  <input type="text" name="nom" placeholder="Nom" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="password" name="motDePasse" placeholder="Mot de passe" required />
+
+  <select name="role">
+    <option value="enseignant">Enseignant</option>
+    <option value="administration">Administration</option>
+  </select>
+
+  <button type="submit">S'inscrire</button>
+</form>
