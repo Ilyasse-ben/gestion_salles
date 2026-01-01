@@ -1,0 +1,28 @@
+<div class="bg-white p-6 rounded shadow max-w-[800px] w-full">
+  <h2 class="text-2xl font-bold mb-4">Enseignants</h2>
+
+  <a href="/admin/enseignants/add" class="bg-green-600 text-white p-2 rounded">
+    + Ajouter
+  </a>
+
+  <table class="w-full mt-4 border-2">
+    <tr>
+        <th class="p-2">Nom</th>
+        <th class="p-2">Email</th>
+        <th class="p-2">Modifier</th>
+        <th class="p-2">Supprimer</th>
+    </tr>
+    <% enseignants.forEach(e => { %>
+      <tr class="border-2">
+        <td class="p-2 border"><%= e.nom %></td>
+        <td class="p-2 border"><%= e.email %></td>
+        <td class="p-2 border">
+          <a href="/admin/enseignants/edit/<%= e._id %>" class="text-blue-600">Modifier</a>
+        </td>
+        <td class="p-2 border">
+          <a href="/admin/enseignants/delete/<%= e._id %>" class="text-red-600">Supprimer</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>

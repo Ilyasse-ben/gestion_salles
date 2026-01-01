@@ -1,0 +1,21 @@
+<div class="bg-white p-6 rounded shadow max-w-[800px] w-full">
+  <h2 class="text-2xl font-bold mb-4">Salles disponibles</h2>
+
+  <table class="w-full border">
+    <% salles.forEach(s => { %>
+      <tr class="border">
+        <td class="p-2"><%= s.nom %></td>
+        <td class="p-2"><%= s.capacite %></td>
+        <td class="p-2"><%= s.type %></td>
+        <td class="p-2">
+          <a
+            href="/enseignant/reserver/<%= s._id %>"
+            class="bg-blue-600 text-white px-3 py-1 rounded"
+          >
+            Réserver
+          </a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>

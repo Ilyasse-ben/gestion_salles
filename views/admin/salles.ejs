@@ -1,0 +1,21 @@
+<div class="bg-white p-6 rounded shadow max-w-[800px] w-full">
+  <h2 class="text-xl font-bold mb-4">Liste des salles</h2>
+
+  <a href="/admin/salles/add" class="bg-blue-600 text-white p-2 rounded">
+    Ajouter Salle
+  </a>
+
+  <table class="w-full mt-4 border">
+    <% salles.forEach(salle => { %>
+      <tr class="border">
+        <td class="p-2"><%= salle.nom %></td>
+        <td class="p-2"><%= salle.capacite %></td>
+        <td class="p-2">
+          <a href="/admin/salles/delete/<%= salle._id %>" class="text-red-600">
+            Supprimer
+          </a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>

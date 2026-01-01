@@ -39,7 +39,8 @@ exports.login = async (req, res) => {
   if (!isMatch) return res.send("Mot de passe incorrect");
 
   req.session.user = user;
-  res.send(`Bienvenue ${user.nom} (${user.role})`);
+  if(user.role === "administration") return res.redirect("/admin");
+  if(user.role === "enseignant") return res.redirect("/enseignant/salles");
 };
 
 // Déconnexion

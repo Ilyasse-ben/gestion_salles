@@ -1,0 +1,28 @@
+<div class="bg-white p-6 rounded shadow max-w-[800px]  w-full">
+  <h2 class="text-2xl font-bold mb-4">Réservations des salles</h2>
+
+  <table class="w-full border">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="p-2 border">Salle</th>
+        <th class="p-2 border">Enseignant</th>
+        <th class="p-2 border">Date</th>
+        <th class="p-2 border">Heure</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reservations.forEach(r => { %>
+        <tr>
+          <td class="p-2 border"><%= r.salle.nom %></td>
+          <td class="p-2 border"><%= r.enseignant.nom %></td>
+          <td class="p-2 border">
+            <%= r.date.toISOString().slice(0,10) %>
+          </td>
+          <td class="p-2 border">
+            <%= r.heureDebut %> - <%= r.heureFin %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
